@@ -27,7 +27,7 @@ Now you can run the scripts in the data folder to move the videos to the appropr
 
 Run `python CNN_train_UCF101.py` to train and save the CNN model.
 
-Run `python CNN_evaluate_testset.py` to evaluate the whole test set, that takes a long time for 697,865 images.
+Choose the best model to run `python CNN_evaluate_testset.py` to evaluate the whole test set, that takes a long time for 697,865 images.
 
 Run `python CNN_validate_images.py` to classify a few images.
 
