@@ -2,6 +2,8 @@
 
 Classify UCF-101 videos using one frame at a time with a CNN(InceptionV3)
 
+The paper blog [**视频分类之UCF101上的CNN方法详解**] for chinese at zhihu.com [https://zhuanlan.zhihu.com/p/28307781](https://zhuanlan.zhihu.com/p/28307781) 
+
 ## Requirements
 This project runs at ubuntu 16.04 with GeForce GTX 1080 8G X2.
 
