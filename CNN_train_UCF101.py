@@ -33,11 +33,11 @@ tensorboard = TensorBoard(log_dir='./data/logs/')
 def get_generators():
     train_datagen = ImageDataGenerator(
         rescale=1./255,
-        shear_range=0.2,
+        shear_range=0.3,
         horizontal_flip=True,
         rotation_range=10.,
-        width_shift_range=0.2,
-        height_shift_range=0.2)
+        width_shift_range=0.3,
+        height_shift_range=0.3)
 
     test_datagen = ImageDataGenerator(rescale=1./255)
 
@@ -76,7 +76,7 @@ def get_model(weights='imagenet'):
         layer.trainable = False
 
     # compile the model (should be done *after* setting layers to non-trainable)
-    model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+    model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
     return model
 
@@ -92,7 +92,7 @@ def fine_tune_inception_layer(model):
     # we need to recompile the model for these modifications to take effect
     # we use SGD with a low learning rate
     model.compile(
-        optimizer=SGD(lr=0.0001, momentum=0.9),
+        optimizer=SGD(lr=0.0001, momentum=0.5),
         loss='categorical_crossentropy',
         metrics=['accuracy', 'top_k_categorical_accuracy'])
 
